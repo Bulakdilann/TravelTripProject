@@ -36,14 +36,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="col-md-8 single-main">
                 @foreach (var x in Model.Deger1)
                 {
-                    <div class="single-grid">
-                        <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
-                        <h2>@x.Title</h2>
-                        <p> @x.Date </p>
-                        <p>
-                            @x.Explanation
-                        </p>
-                    </div>
+                <div class="single-grid">
+                    <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
+                    <span class="doller">@x.Date.ToString("dd.MM.yyyy")</span><br />
+                    <h2>@x.Title</h2>
+                    <p>
+                        @x.Explanation
+                    </p>
+                </div>
 
                 }
                 @foreach (var y in Model.Deger2)

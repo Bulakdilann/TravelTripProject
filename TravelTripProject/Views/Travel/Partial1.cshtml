@@ -1,0 +1,36 @@
+﻿@using TravelTripProject.Models.Classes
+@model List<Blog>
+<div class="con-bot">
+
+    @foreach (var x in Model)
+    {
+    <div class="left" style="float: left; width: 29%; ">
+        <div class="bot-left">
+            <img src="@x.BlogImage" alt="" style="width:250px" height="150px" />
+        </div>
+        <div class="left-text">
+            <h4>@x.Title</h4>
+            <span class="doller">@x.Date.ToString("dd.MM.yyyy")</span>
+            <p>@x.Explanation.Substring(0, 99)...</p>
+            <p><a href="/Blog/BlogDetail/@x.Id"><span class="read">Devamını Oku >></span></a></p>
+        </div>
+    </div>
+            }
+
+      
+
+        @*<div class="right">
+                <div class="bot-left">
+                    <img src="~/web/images/pic2.jpg" alt="" />
+                </div>
+                <div class="left-text">
+
+                    <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
+                    <span class="doller">$924.99</span>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
+                    <p><a href="#"><span class="read">Read More >></span></a></p>
+                </div>
+            </div>*@
+        <div class="clear"></div>
+    </div>
+

@@ -48,13 +48,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 {
                 <div class="single-grid">
                     <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
-                    <a href="/Blog/BlogDetail/@x.Id">@x.Title</a>
-                    <p>
-                        @x.Date
-                    </p>
+                    <span class="doller">@x.Date.ToString("dd.MM.yyyy")</span><br />
+                    <h2><a href="/Blog/BlogDetail/@x.Id">@x.Title</a></h2>
+
                     <p>
                         @x.Explanation
                     </p>
+
                     <br /> <br />
                 </div>
                         }
