@@ -30,5 +30,17 @@ namespace TravelTripProject.Controllers
             var degerler = _db.Blogs.OrderByDescending(x => x.Id).Take(10).ToList();
             return PartialView(degerler);
         }
+
+        public PartialViewResult Partial3()
+        {
+            var degerler = _db.Blogs.Take(3).ToList();
+            return PartialView(degerler);
+        }
+
+        public PartialViewResult Partial5()
+        {
+            var degerler = _db.Blogs.OrderByDescending(x => x.Id).Take(3).ToList();
+            return PartialView(degerler);
+        }
     }
 }
