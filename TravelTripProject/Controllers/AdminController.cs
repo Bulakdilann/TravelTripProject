@@ -30,5 +30,31 @@ namespace TravelTripProject.Controllers
             // Kaydettikten sonra Index Sayfasına Git
             return RedirectToAction("Index");
         }
+        
+        public ActionResult DeleteBlog(int id)
+        {
+            var bul = _db.Blogs.Find(id);
+            _db.Blogs.Remove(bul);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult UpdateBlog(int id)
+        {
+            var bul= _db.Blogs.Find(id);
+            return View("UpdateBlog",bul);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateBlog(Blog b)
+        {
+            var bul = _db.Blogs.Find(b.Id);
+            bul.Explanation = b.Explanation;
+            bul.Title = b.Title;
+            bul.Date = b.Date;
+            bul.BlogImage = b.BlogImage;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

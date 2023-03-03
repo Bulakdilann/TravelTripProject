@@ -1,13 +1,17 @@
 ﻿@model TravelTripProject.Models.Classes.Blog
 @{
-    ViewBag.Title = "NewBlog";
+    ViewBag.Title = "UpdateBlog";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Yeni Blog Ekleme</h2>
+<h2>Blog Güncelleme</h2>
 <br />
-<form class="form-group" method="post">
-    @*HtmlHelper'ları kullandık*@
+@*Html Begin form*@
+@using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly= "readonly"})
+    <br />
     @Html.LabelFor(x => x.Title)
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
     <br />
@@ -20,10 +24,12 @@
     @Html.LabelFor(x => x.Explanation)
     @Html.TextAreaFor(x => x.Explanation,7,1, new { @class = "form-control" })
     <br />
-     
-        <button class="btn btn-primary">Blog Ekle</button>
-    
+
+    <button class="btn btn-primary">Blog Güncelle</button>
+
+}
 
 
-</form>
+
+
 
