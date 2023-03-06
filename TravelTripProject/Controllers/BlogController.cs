@@ -16,6 +16,7 @@ namespace TravelTripProject.Controllers
             //var bloglar = _db.Blogs.ToList();
             bc.Deger1 = _db.Blogs.ToList();
             bc.Deger3 = _db.Blogs.OrderByDescending(x=>x.Id).Take(3).ToList();
+            bc.Deger4 = _db.Comments.OrderByDescending(x => x.Id).Take(3).ToList();
             return View(bc);
         }
 
@@ -27,6 +28,7 @@ namespace TravelTripProject.Controllers
             bc.Deger1 = _db.Blogs.Where(x => x.Id == id).ToList();
             bc.Deger2 = _db.Comments.Where(x => x.BlogId == id).ToList();
             bc.Deger3 = _db.Blogs.OrderByDescending(x => x.Id).Take(3).ToList();
+            bc.Deger4 = _db.Comments.OrderByDescending(x => x.Id).Take(3).ToList();
             return View(bc);
         }
         [HttpGet]

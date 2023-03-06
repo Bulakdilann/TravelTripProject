@@ -42,5 +42,19 @@ namespace TravelTripProject.Controllers
             var degerler = _db.Blogs.OrderByDescending(x => x.Id).Take(3).ToList();
             return PartialView(degerler);
         }
+
+        public ActionResult Page403()
+        {
+            Response.StatusCode = 403;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+
+        public ActionResult Page404()
+        {
+            Response.StatusCode = 404;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
     }
 }

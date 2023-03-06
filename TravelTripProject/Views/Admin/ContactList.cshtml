@@ -1,0 +1,49 @@
+﻿@using TravelTripProject.Models.Classes
+@model List<Contact>
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İletişim Listesi</h2>
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameSurmane</th>
+                <th>E-mail</th>
+                <th>Konu</th>
+                <th>Mesaj</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.NameSurname</td>
+                    <td>@x.Email</td>
+                    <td>@x.Subject</td>
+                    <td style="width:250px">@x.Message</td>
+                   
+                    <td>
+                        <a href="/Admin/DeleteContact/@x.Id" class="btn btn-danger btn-xs">
+                            <span class="glyphicon glyphicon-trash" title="Sil"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+

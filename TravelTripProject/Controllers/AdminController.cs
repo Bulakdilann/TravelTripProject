@@ -87,5 +87,19 @@ namespace TravelTripProject.Controllers
             _db.SaveChanges();
             return RedirectToAction("CommentList");
         }
+
+        public ActionResult ContactList()
+        {
+            var listele = _db.Contacts.ToList();
+            return View(listele);
+        }
+
+        public ActionResult DeleteContact(int id)
+        {
+            var bul = _db.Contacts.Find(id);
+            _db.Contacts.Remove(bul);
+            _db.SaveChanges();
+            return RedirectToAction("ContactList");
+        }
     }
 }

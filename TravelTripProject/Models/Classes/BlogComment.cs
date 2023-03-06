@@ -10,5 +10,6 @@ namespace TravelTripProject.Models.Classes
         public IEnumerable<Blog> Deger1 { get; set; }
         public IEnumerable<Comments> Deger2 { get; set; }
         public IEnumerable<Blog> Deger3 { get; set; }
+        public IEnumerable<Comments> Deger4 { get; set; }
     }
 }

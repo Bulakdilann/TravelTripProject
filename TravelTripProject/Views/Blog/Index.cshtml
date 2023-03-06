@@ -51,10 +51,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <span class="doller">@x.Date.ToString("dd.MM.yyyy")</span><br />
                     <h2><a href="/Blog/BlogDetail/@x.Id">@x.Title</a></h2>
 
-                    <p>
-                        @x.Explanation
-                    </p>
-
+                    <p>@x.Explanation.Substring(0, 200)...</p>
+                    <p><a href="/Blog/BlogDetail/@x.Id"><span class="read">Devamını Oku >></span></a></p>
                     <br /> <br />
                 </div>
                         }
@@ -75,11 +73,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="comments">
                     <h3>Son Yorumlar</h3>
-                    <ul>
-                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-                    </ul>
+                    @foreach (var sony in Model.Deger4)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetail/@sony.BlogId">@sony.Comment.Substring(0,25)... </a> </li>
+
+                        </ul>
+                    }
+
                 </div>
               
             </div>

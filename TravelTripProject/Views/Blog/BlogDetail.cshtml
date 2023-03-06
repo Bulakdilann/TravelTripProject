@@ -74,18 +74,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         </ul>
                     }
-                    </div>
+                </div>
 
-                    <div class="comments">
-                        <h3>RECENT COMMENTS</h3>
+                <div class="comments">
+                    <h3>Son Yorumlar</h3>
+                    @foreach (var sony in Model.Deger4)
+                    {
                         <ul>
-                            <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-                            <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-                            <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                            <li><a href="/Blog/BlogDetail/@sony.BlogId">@sony.Comment.Substring(0, 25)... </a> </li>
+
                         </ul>
-                    </div>
+                    }
 
                 </div>
+
+            </div>
                 <div class="clearfix"></div>
             </div>
         </div>
