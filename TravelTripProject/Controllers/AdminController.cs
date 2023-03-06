@@ -101,5 +101,45 @@ namespace TravelTripProject.Controllers
             _db.SaveChanges();
             return RedirectToAction("ContactList");
         }
+
+        public ActionResult AboutUs()
+        {
+            var listele = _db.AboutUs.ToList();
+            return View(listele);
+        }
+        [HttpGet]
+        public ActionResult NewAboutUs()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewAboutUs(AboutUs aboutUs)
+        {
+            _db.AboutUs.Add(aboutUs);
+            _db.SaveChanges();
+            return RedirectToAction("AboutUs");
+        }
+
+        public ActionResult DeleteAboutUs(int id)
+        {
+            var bul = _db.AboutUs.Find(id);
+            _db.AboutUs.Remove(bul);
+            _db.SaveChanges();
+            return RedirectToAction("AboutUs");
+        }
+        public ActionResult UpdateAboutUs(int id)
+        {
+            var bul = _db.AboutUs.Find(id);
+            return View(bul);
+        }
+        [HttpPost]
+        public ActionResult UpdateAboutUs(AboutUs aboutUs)
+        {
+            var bul = _db.AboutUs.Find(aboutUs.Id);
+            bul.PhotoUrl = aboutUs.PhotoUrl;
+            bul.Explanation = aboutUs.Explanation;
+            _db.SaveChanges();
+            return RedirectToAction("AboutUs");
+        }
     }
 }

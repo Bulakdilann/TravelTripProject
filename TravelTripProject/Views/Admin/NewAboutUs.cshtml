@@ -1,0 +1,24 @@
+﻿@model TravelTripProject.Models.Classes.AboutUs
+@{
+    ViewBag.Title = "NewAboutUs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkında Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @*HtmlHelper'ları kullandık*@
+    @Html.LabelFor(x => x.PhotoUrl)
+    @Html.TextBoxFor(x => x.PhotoUrl, new { @class = "form-control" })
+    <br />
+  
+    @Html.LabelFor(x => x.Explanation)
+    @Html.TextAreaFor(x => x.Explanation, 7, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Açıklama Ekle</button>
+
+
+
+</form>
+
